@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from products.views import form_create
+from products.views import form_create_raw, form_create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',form_create),
+    path('',form_create_raw),
+    path('create/',form_create),
 ]

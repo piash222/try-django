@@ -12,3 +12,9 @@ def form_create(request):
     }
     
     return render(request, 'products/form_create.html', context)
+
+
+def form_create_raw(request):
+    print(type(request.GET))
+    print(type(request.POST))
+    return render(request, 'products/form_create_raw.html', {})
