@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .form import ProductForm
+from .form import ProductForm, RawProductForm
 
 # Create your views here.
 def form_create(request):
@@ -18,3 +18,12 @@ def form_create_raw(request):
     print(type(request.GET))
     print(type(request.POST))
     return render(request, 'products/form_create_raw.html', {})
+
+
+def form_django_raw(request):
+    my_form = RawProductForm(request.POST)
+    context = {
+        'form': my_form
+
+    }
+    return render(request, 'products/form_create.html', context)
